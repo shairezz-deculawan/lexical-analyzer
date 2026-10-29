@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Lexical Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <p class="eyebrow">CS302 · AUTOMATA THEORY AND FORMAL LANGUAGES</p>
+      <h1>SQL Lexical Analyzer</h1>
+      <p class="subtitle">Recognize SQL tokens and detect invalid lexical patterns.</p>
+    </header>
+
+    <section class="panel">
+      <label for="sqlInput">Enter an SQL query</label>
+      <textarea id="sqlInput" spellcheck="false">SELECT name, age FROM users WHERE age >= 18;</textarea>
+
+      <div class="actions">
+        <button id="analyzeBtn" class="primary">Analyze Query</button>
+        <button id="clearBtn" class="secondary">Clear</button>
+        <button id="acceptedBtn" class="secondary">Load Accepted Example</button>
+        <button id="rejectedBtn" class="secondary">Load Rejected Example</button>
+      </div>
+
+      <div id="status" class="status neutral" role="status" aria-live="polite">
+        Ready to analyze.
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="results-heading">
+        <h2>Recognized Tokens</h2>
+        <span id="tokenCount" class="count">0 tokens</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Lexeme</th><th>Token Type</th></tr>
+          </thead>
+          <tbody id="tokenRows">
+            <tr class="empty"><td colspan="2">Analyze a query to see the tokens here.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      This program checks lexical tokens only. It does not execute SQL or connect to a database.
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
